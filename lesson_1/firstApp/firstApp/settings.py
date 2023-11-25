@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'firstApp',
+    'app_weather',
+    'hello_world'
+
 ]
 
 MIDDLEWARE = [
