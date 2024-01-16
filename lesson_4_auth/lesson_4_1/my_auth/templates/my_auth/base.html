@@ -33,7 +33,9 @@
                     {% endfor %}
                 </div>
 
-                <p>{{i_record.description| truncatewords:50}} <a href="#">Читать далее... </a></p>
+                <p>{{i_record.description|truncatewords:50}} <a href="{% url 'record_detail' pk=i_record.pk %}">Читать далее... </a></p>
+
+<!--                <p>{{i_record.description| truncatewords:50}} <a href="#">Читать далее... </a></p>-->
                 <div class="d-flex">
                     <span class="me-2">Автор: {{i_record.user.user.email}}</span>
                     <span>Опубликовано: {{i_record.created_at}}</span>

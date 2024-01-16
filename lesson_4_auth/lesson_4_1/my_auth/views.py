@@ -7,9 +7,12 @@ from django.urls import reverse_lazy
 from django.contrib.auth import authenticate, login, logout
 from django.views import View
 
+from django.views.generic import DetailView #my
+
 from .forms  import UserForm, ProfileForm, RecordForm, ImagesForm
 from .models import Profile, Record, ImagesRecord
 from django.contrib import messages
+
 
 
 def main_page(request, *args, **kwargs):
@@ -95,3 +98,9 @@ class RecordFormView(LoginRequiredMixin, View):
         return render(request, template_name='my_auth/record_form.html',
                       context={'record_form': record_form, 'image_form': image_form,
                                'error': 'Something went wrong'})
+
+
+class RecordDetailView(DetailView):
+    model = Record
+    template_name = 'record_detail.html'
+    context_object_name = 'record'
